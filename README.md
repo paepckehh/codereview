@@ -16,12 +16,12 @@ Shrink size of sourcecode you have to:
 
 # Showtime Code Compact
 
-Compact before (compile|store|review)
+Compact source code before (compile|store|review)
 
-Example: freebsd/freebsd-src mixed sourcecode
-Process: 1.4GB, 99.818 files, 21.364.953 LOC
-Save:    6.293.356 LOC removed (~171 MB) 
-Time:    > less than a second (x86/4core/2.2GHz)
+- example : freebsd/freebsd-src mixed sourcecode
+- process : 1.4GB, 99.818 files, 21.364.953 LOC
+- save    : 6.293.356 LOC removed (~171 MB) 
+- time    : > less than a second (x86/4core/2.2GHz)
 
 ```Shell
 git.checkout freebsd && codereview --inplace .
