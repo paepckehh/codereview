@@ -1,6 +1,10 @@
+// package codereview ...
 package codereview
 
-import "paepcke.de/lib/blake3"
+// import 
+import (
+	"github.com/zeebo/blake3"
+)
 
 //
 // LITTLE HELPER FUNCTIONS
