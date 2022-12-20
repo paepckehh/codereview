@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	shfmtsyntax "mvdan.cc/sh/syntax"
+	shfmtsyntax "mvdan.cc/sh/v3/syntax"
 )
 
 // parseSH and compact an posix complient shell script
