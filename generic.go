@@ -1,7 +1,7 @@
 // package codereview ...
 package codereview
 
-// import 
+// import
 import (
 	"github.com/zeebo/blake3"
 )
