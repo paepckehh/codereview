@@ -2,6 +2,11 @@
 
 [paepche.de/codereview](https://paepcke.de/codereview)
 
+## Install 
+```
+go install paepcke.de/codereview/cmd/codereview@latest
+```
+
 ## Code Review: Save time when track source code changes.
 
 Automatically filter all the noise from commits:
