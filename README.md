@@ -87,7 +87,7 @@ codereview --hash api.go                # see coderevieview hash changed as well
 ```
 
 
-## Anything else?
+## More?
 
 ```Shell
 codereview --help
