@@ -1,12 +1,13 @@
-# Overview
+# OVERVIEW 
 
 [paepche.de/codereview](https://paepcke.de/codereview)
 
-## Install 
+# INSTALL
+
 ```
 go install paepcke.de/codereview/cmd/codereview@latest
 ```
-
+# WHY?
 ## Code Review: Save time when track source code changes.
 
 Automatically filter all the noise from commits:
@@ -21,9 +22,9 @@ Shrink size of sourcecode you have to:
 - no more compliler cache trashing caused by noise (ccache, go-build, ...)
 - parses full AST tree and prints a very compact, optimized version (golang)
 
-# Showtime Code Compact
+# SHOWTIME 
 
-Compact source code before (compile|store|review)
+## Compact source code before (compile|store|review)
 
 - example : freebsd/freebsd-src mixed sourcecode
 - process : 1.4GB, 99.818 files, 21.364.953 LOC
@@ -38,8 +39,6 @@ CODEREVIEW [stats] [total files: 99818] [processed: 50343]
 CODEREVIEW [stats] [total loc: 21363953] [removeable: 6293365] [savings: 171.1 Mbytes]
 [...]
 ```
-# Showtime Code Review 
-
 ## Full Repo View: 
 
 ```Shell
@@ -123,3 +122,7 @@ syntax: codereview [options] <file|directory>
 --help [-h]
 
 ```
+
+# CONTRIBUTION
+
+Yes, Please! PRs Welcome! 
