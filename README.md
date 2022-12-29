@@ -7,7 +7,13 @@
 ```
 go install paepcke.de/codereview/cmd/codereview@latest
 ```
+
+# DOWNLOAD (prebuild)
+
+[github.com/paepckehh/codereview/releases](https://github.com/paepckehh/codereview/releases)
+
 # WHY?
+
 ## Code Review: Save time when track source code changes.
 
 Automatically filter all the noise from commits:
