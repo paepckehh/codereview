@@ -22,11 +22,11 @@ func main() {
 			o := os.Args[i]
 			switch {
 			case o[0] == '-':
-				switch {
-				case o == "--inplace" || o == "-w":
+				switch o {
+				case "--inplace", "-w":
 					c.Inplace = true
 					opt += "[--inplace] "
-				case o == "--exclude" || o == "-e":
+				case "--exclude", "-e":
 					i++
 					switch {
 					case i < l:
@@ -35,36 +35,36 @@ func main() {
 					default:
 						errExit("exclude switch value missing")
 					}
-				case o == "--help" || o == "-h":
+				case "--help", "-h":
 					out(_syntax)
 					os.Exit(0)
-				case o == "--hash" || o == "-H":
+				case "--hash", "-H":
 					c.HashOut = true
-				case o == "--verbose" || o == "-v":
+				case "--verbose", "-v":
 					c.Verbose = true
 					opt += "[--verbose] "
-				case o == "--silent" || o == "-q":
+				case "--silent", "-q":
 					c.Silent = true
 					opt += "[--silent] "
-				case o == "--debug" || o == "-d":
+				case "--debug", "-d":
 					c.Debug = true
 					opt += "[--debug] "
-				case o == "--disable-c":
+				case "--disable-c":
 					c.LangC = false
 					opt += "[--disable-c] "
-				case o == "--disable-go":
+				case "--disable-go":
 					c.LangGO = false
 					opt += "[--disable-go] "
-				case o == "--disable-sh":
+				case "--disable-sh":
 					c.LangSH = false
 					opt += "[--disable-sh] "
-				case o == "--disable-asm":
+				case "--disable-asm":
 					c.LangASM = false
 					opt += "[--disable-asm] "
-				case o == "--disable-make":
+				case "--disable-make":
 					c.LangMAKE = false
 					opt += "[--disable-make] "
-				case o == "--disable-hidden-files":
+				case "--disable-hidden-files", "--disable-hidden":
 					c.SkipHidden = true
 					opt += "[--disable-hidden-files] "
 				default:
