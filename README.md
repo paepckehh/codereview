@@ -8,7 +8,7 @@
 go install paepcke.de/codereview/cmd/codereview@latest
 ```
 
-# DOWNLOAD (prebuild)
+### DOWNLOAD (prebuild)
 
 [github.com/paepckehh/codereview/releases](https://github.com/paepckehh/codereview/releases)
 
