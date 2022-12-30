@@ -22,12 +22,12 @@ func (c *Config) fastWalker() {
 		errExit("[stat deviceID root dir] [" + c.Path + "]")
 	}
 	for i := 0; i < worker; i++ {
-		go c.walkParse(d, uint64(d.Dev))
+		go c.walkParse(uint64(d.Dev))
 	}
 }
 
 // walkParse ...
-func (c *Config) walkParse(d *syscall.Stat_t, rootNodeDeviceID uint64) {
+func (c *Config) walkParse(rootNodeDeviceID uint64) {
 	exclude, skipme := false, false
 	if len(c.Exclude) > 0 {
 		exclude = true
