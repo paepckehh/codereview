@@ -1,12 +1,12 @@
 //go:build windows
 
-// walker windows version does not implement (yet) skiping
-// hardlink de-duplicated data (inode seen based on'fileid')
+// walker windows does not implement (yet) skiping hardlinked
+// files(inode seen based on windows 'fileid') and no support
+// for filesystem boundary crossing checks
 package codereview
 
 import (
 	"os"
-	"syscall"
 )
 
 const (
@@ -16,22 +16,14 @@ const (
 
 // fastWalker ...
 func (c *Config) fastWalker() {
-	fi, err := os.Stat(c.Path)
-	if err != nil {
-		errExit("[stat deviceID root dir] [" + c.Path + "] [" + err.Error() + "]")
-	}
 	channel_dir <- c.Path
-	d, ok := fi.Sys().(*syscall.Stat_t)
-	if !ok {
-		errExit("[stat deviceID root dir] [" + c.Path + "]")
-	}
 	for i := 0; i < worker; i++ {
-		go c.walkParse(uint64(d.Dev))
+		go c.walkParse()
 	}
 }
 
 // walkParse ...
-func (c *Config) walkParse(rootNodeDeviceID uint64) {
+func (c *Config) walkParse() {
 	exclude, skipme := false, false
 	if len(c.Exclude) > 0 {
 		exclude = true
@@ -46,7 +38,6 @@ func (c *Config) walkParse(rootNodeDeviceID uint64) {
 		}
 		for _, item := range list {
 			total++
-			fi, _ := item.Info()
 			fname := item.Name()
 			if c.SkipHidden {
 				if fname[0] == '.' {
@@ -59,10 +50,6 @@ func (c *Config) walkParse(rootNodeDeviceID uint64) {
 				continue // skip symlinks
 			}
 			if ftype&_modeDir != 0 {
-				st, _ := fi.Sys().(*syscall.Stat_t)
-				if uint64(st.Dev) != rootNodeDeviceID {
-					continue // skip dirtargets outside fs boundary
-				}
 				if exclude {
 					skipme = false
 					for _, exclude := range c.Exclude {
