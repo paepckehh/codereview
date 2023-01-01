@@ -1,4 +1,7 @@
-// walker windows does not implement skip hardlink duplicated data (inode aka 'fileid' based)
+//go:build windows
+
+// walker windows version does not implement (yet) skiping
+// hardlink de-duplicated data (inode seen based on'fileid')
 package codereview
 
 import (
