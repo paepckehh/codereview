@@ -21,8 +21,6 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: ${{ matrix.go-version }}
-	check-latest: true 
-	cache: true
 
     - name: Checkout code
       uses: actions/checkout@v3
