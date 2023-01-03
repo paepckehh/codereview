@@ -1,6 +1,6 @@
 //go:build windows
 
-// walker windows does not implement (yet) skiping hardlinked
+// walker windows does not implement (yet) skiping hardline
 // files(inode seen based on windows 'fileid') and no support
 // for filesystem boundary crossing checks
 package codereview
