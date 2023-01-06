@@ -30,20 +30,20 @@ type (
 
 var (
 	bg, walk, walkStat sync.WaitGroup
-	worker                     = runtime.NumCPU()
-	channel_statFile           = make(chan statFile, maxTargets)
-	channel_statFiles          = make(chan statFiles, maxTargets)
-	channel_dir                = make(chan string, chanBuff*25)
-	channel_c                  = make(chan string, chanBuff)
-	channel_go                 = make(chan string, chanBuff)
-	channel_sh                 = make(chan string, chanBuff/4)
-	channel_asm                = make(chan string, chanBuff/4)
-	channel_make               = make(chan string, chanBuff/4)
-	channelFiles               = make(chan files, 1)
-	channelSavings             = make(chan savings, 1)
-	_goDS                      = []byte(_goD) // thanks, for not having immutable constant slices in go!
-	_goDSO                     = []byte(_goDO)
-	_lf                        = []byte(_lineFeed)
+	worker             = runtime.NumCPU()
+	channel_statFile   = make(chan statFile, maxTargets)
+	channel_statFiles  = make(chan statFiles, maxTargets)
+	channel_dir        = make(chan string, chanBuff*25)
+	channel_c          = make(chan string, chanBuff)
+	channel_go         = make(chan string, chanBuff)
+	channel_sh         = make(chan string, chanBuff/4)
+	channel_asm        = make(chan string, chanBuff/4)
+	channel_make       = make(chan string, chanBuff/4)
+	channelFiles       = make(chan files, 1)
+	channelSavings     = make(chan savings, 1)
+	_goDS              = []byte(_goD) // thanks, for not having immutable constant slices in go!
+	_goDSO             = []byte(_goDO)
+	_lf                = []byte(_lineFeed)
 )
 
 //
