@@ -96,13 +96,12 @@ func main() {
 		r := codereview.Result{}
 		switch {
 		case c.SingleFile:
-			var code []byte
 			t, p = 1, 1
 			r = c.ParseFileSheBang()
 			if !r.Found || r.TotalLines == 0 {
-				errExit(string(code))
+				errExit(string(r.Result))
 			}
-			x, s, b, code = r.TotalLines, r.LineSavings, r.ByteSavings, r.Result
+			x, s, b = r.TotalLines, r.LineSavings, r.ByteSavings
 		default:
 			if !c.Inplace {
 				c.HashOut = true

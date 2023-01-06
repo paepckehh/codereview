@@ -25,13 +25,12 @@ func (c *Config) parseGO(filename string) Result {
 			out("[codereview] [external ast parser crash/panic] [skip] [" + filename + "]")
 		}
 	}()
-	f, err := os.ReadFile(filename)
+	file, err := os.ReadFile(filename)
 	if err != nil {
 		errOut("[error] [unable to read file] [" + filename + "]")
 		return Result{}
 	}
-	lineTotal, fileSize := bytes.Count(f, _lf), len(f)
-	f = nil // do not try to parse broken, invalid & empty files, do not rely on fs.stat.size
+	lineTotal, fileSize := bytes.Count(file, _lf), len(file)
 	if fileSize < 1 {
 		return c.finalizeWorker(0, 0, 0, filename, []byte{})
 	}

@@ -29,7 +29,7 @@ type (
 )
 
 var (
-	global, bg, walk, walkStat sync.WaitGroup
+	bg, walk, walkStat sync.WaitGroup
 	worker                     = runtime.NumCPU()
 	channel_statFile           = make(chan statFile, maxTargets)
 	channel_statFiles          = make(chan statFiles, maxTargets)
