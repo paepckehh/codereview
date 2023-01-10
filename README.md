@@ -129,6 +129,10 @@ syntax: codereview [options] <file|directory>
 
 ```
 
+# DOCS
+
+[pkg.go.dev/paepcke.de/codereview](https://pkg.go.dev/paepcke.de/codereview)
+
 # CONTRIBUTION
 
 Yes, Please! PRs Welcome! 
