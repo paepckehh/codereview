@@ -68,7 +68,7 @@ func main() {
 					c.SkipHidden = true
 					opt += "[--disable-hidden-files] "
 				default:
-					errExit("unkown commandline switch [" + o + "]")
+					errExit("unknown commandline switch [" + o + "]")
 				}
 			case o == ".", o == "*":
 				if c.Path != "" {
