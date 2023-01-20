@@ -1,6 +1,6 @@
 module paepcke.de/codereview
 
-go 1.21
+go 1.19
 
 require (
 	github.com/zeebo/blake3 v0.2.3
