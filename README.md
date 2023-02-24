@@ -1,7 +1,7 @@
 # OVERVIEW
 [![Go Reference](https://pkg.go.dev/badge/paepcke.de/codereview.svg)](https://pkg.go.dev/paepcke.de/codereview) [![Go Report Card](https://goreportcard.com/badge/paepcke.de/codereview)](https://goreportcard.com/report/paepcke.de/codereview) [![Go Build](https://github.com/paepckehh/codereview/actions/workflows/golang.yml/badge.svg)](https://github.com/paepckehh/codereview/actions/workflows/golang.yml)
 
-[paepche.de/codereview](https://paepcke.de/codereview/)
+[paepcke.de/codereview](https://paepcke.de/codereview/)
 
 # INSTALL
 
