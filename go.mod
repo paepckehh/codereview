@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/zeebo/blake3 v0.2.3
 	mvdan.cc/gofumpt v0.5.0
-	mvdan.cc/sh/v3 v3.6.0
+	mvdan.cc/sh/v3 v3.7.0
 )
 
 require (
