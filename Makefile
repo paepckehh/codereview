@@ -1,6 +1,11 @@
 PROJECT=$(shell basename $(CURDIR))
 
-all:
+all: info
+
+info:
+	echo "$(PROJECT)"
+
+build:
 	make -C cmd/$(PROJECT) all
 
 deps: 
